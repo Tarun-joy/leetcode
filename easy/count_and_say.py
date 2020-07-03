@@ -17,6 +17,6 @@ class Solution(object):
 
 if __name__ == "__main__":
     a = Solution()
-    x = a.countAndSay(2)
+    x = a.countAndSay(5)
     print(x)
     pass
