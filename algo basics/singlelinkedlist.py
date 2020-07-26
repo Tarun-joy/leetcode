@@ -75,9 +75,27 @@ class Linkedlist:
                 break
             itr = itr.next
             count+=1
-           
+    def insert_after_value(self,data_after,data):
+        itr = self.head
+        while itr:
+            if itr.data == data_after:
+                node = Node(data,itr.next)
+                itr.next = node
+            itr = itr.next
+    def remove_by_value(self,data):
+        if self.head is None:
+            return
+        if self.head.data == data:
+            self.head =self.head.next
+        itr = self.head
+        while itr.next:
+            if itr.next.data == data: 
+                itr.next = itr.next.next
+                break
+            itr = itr.next    
 if __name__=="__main__":
     a = Linkedlist()
     a.insert_values([1,2,3,4,5])
-    a.insert_at(2,7)
+    a.insert_after_value(5,7)
+    a.remove_by_value(3)
     a.print()
